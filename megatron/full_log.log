@@ -1,0 +1,124 @@
+[LOG][SEARCH](2026-05-14-06-09-38) start searching for gpt, 1_3B, 1 nodes * 4 GPUs.
+[LOG][SEARCH](2026-05-14-06-09-39) end searching for gpt, 1_3B, 1 nodes * 4 GPUs.
+[LOG][SEARCH](2026-05-14-06-09-39) start searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-14-06-09-39) end searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-14-06-09-39) start searching for gpt, 6_7B, 2 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-14-06-09-39) end searching for gpt, 6_7B, 2 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-14-06-09-39) start searching for gpt, 13B, 4 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-14-06-09-39) end searching for gpt, 13B, 4 nodes * 8 GPUs.
+Traceback (most recent call last):
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/scripts/show_best_perf.py", line 13, in <module>
+    for model_size in os.listdir(os.path.join(src_data_path, "runtime", model_name)):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/runtime/gpt'
+[LOG][RUNTIME](2026-05-14-06-20-07) start executing cofnig: gpt_350M_mbs8_recomp .
+[LOG][RUNTIME](2026-05-14-06-20-07) end executing config: gpt_350M_mbs8_recomp .
+[LOG][RUNTIME](2026-05-14-06-27-14) start executing cofnig: gpt_1_3B_24layers_megatron_est_54024 .
+[LOG][RUNTIME](2026-05-14-06-27-14) end executing config: gpt_1_3B_24layers_megatron_est_54024 .
+[LOG][RUNTIME](2026-05-14-06-30-10) start executing cofnig: gpt_2_6B_32layers_megatron_est_45307 .
+[LOG][RUNTIME](2026-05-14-06-30-10) end executing config: gpt_2_6B_32layers_megatron_est_45307 .
+-------- gpt End-to-end throughput --------
+Size	 Batch Size	 Time(s)	 Thpt(samples/s)
+350M	 1024.0		 86.92		 11.78
+1_3B	 1024.0		 53.93		 18.99
+2_6B	 1024.0		 45.38		 22.57
+Config
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/gpt/350M/gpt_350M_mbs8_recomp_rank0.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/gpt/1_3B/gpt_1_3B_24layers_megatron_est_54024_rank2.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/gpt/2_6B/gpt_2_6B_32layers_megatron_est_45307_rank2.csv.json
+[LOG][RUNTIME](2026-05-14-07-14-51) start executing cofnig: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-07-16-24) start executing cofnig: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-07-25-46) start executing cofnig: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-07-28-07) start executing cofnig: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-07-58-51) start executing cofnig: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-08-03-35) start executing cofnig: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-08-17-16) start executing cofnig: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-08-17-16) end executing config: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-08-32-40) start executing cofnig: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-08-32-40) end executing config: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-10-18-57) start executing cofnig: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-10-18-57) end executing config: gpt_6_7B_32layers_megatron_est_46887 .
+[LOG][RUNTIME](2026-05-14-12-19-35) start executing cofnig: gpt_13B_40layers_megatron_est_87603 .
+[LOG][RUNTIME](2026-05-14-12-22-53) start executing cofnig: gpt_13B_40layers_megatron_est_87603 .
+[LOG][RUNTIME](2026-05-14-12-22-53) end executing config: gpt_13B_40layers_megatron_est_87603 .
+[LOG][RUNTIME](2026-05-14-12-26-35) start executing cofnig: gpt_13B_40layers_megatron_est_87603 .
+[LOG][RUNTIME](2026-05-14-12-26-35) end executing config: gpt_13B_40layers_megatron_est_87603 .
+[LOG][SEARCH](2026-05-16-03-07-58) start searching for scale-layer, 8layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-07-58) end searching for scale-layer, 8layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-07-58) start searching for scale-layer, 16layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-07-58) end searching for scale-layer, 16layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-07-58) start searching for scale-layer, 32layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-07-58) end searching for scale-layer, 32layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-07-58) start searching for scale-layer, 64layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-07-59) end searching for scale-layer, 64layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-07-59) start searching for scale-layer, 128layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-07-59) end searching for scale-layer, 128layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-07-59) start searching for scale-layer, 256layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-08-01) end searching for scale-layer, 256layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-08-01) start searching for scale-layer, 512layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-08-04) end searching for scale-layer, 512layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-08-04) start searching for scale-layer, 1024layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-08-11) end searching for scale-layer, 1024layers, 1 nodes * 8 GPUs.
+[LOG][RUNTIME](2026-05-16-03-08-32) start executing config: scale-layer_8layers_8layers_megatron_est_2876 .
+[LOG][RUNTIME](2026-05-16-03-08-58) end executing config: scale-layer_8layers_8layers_megatron_est_2876 .
+[LOG][RUNTIME](2026-05-16-03-08-58) start executing config: scale-layer_16layers_16layers_megatron_est_4457 .
+[LOG][RUNTIME](2026-05-16-03-09-34) end executing config: scale-layer_16layers_16layers_megatron_est_4457 .
+[LOG][RUNTIME](2026-05-16-03-09-34) start executing config: scale-layer_32layers_32layers_megatron_est_7563 .
+[LOG][RUNTIME](2026-05-16-03-10-20) end executing config: scale-layer_32layers_32layers_megatron_est_7563 .
+[LOG][RUNTIME](2026-05-16-03-10-20) start executing config: scale-layer_64layers_64layers_megatron_est_16335 .
+[LOG][RUNTIME](2026-05-16-03-11-32) end executing config: scale-layer_64layers_64layers_megatron_est_16335 .
+[LOG][RUNTIME](2026-05-16-03-11-32) start executing config: scale-layer_128layers_128layers_megatron_est_30088 .
+[LOG][RUNTIME](2026-05-16-03-13-23) end executing config: scale-layer_128layers_128layers_megatron_est_30088 .
+[LOG][RUNTIME](2026-05-16-03-13-23) start executing config: scale-layer_256layers_256layers_megatron_est_57593 .
+[LOG][RUNTIME](2026-05-16-03-16-29) end executing config: scale-layer_256layers_256layers_megatron_est_57593 .
+[LOG][RUNTIME](2026-05-16-03-16-29) start executing config: scale-layer_512layers_512layers_megatron_est_111115 .
+[LOG][RUNTIME](2026-05-16-03-22-26) end executing config: scale-layer_512layers_512layers_megatron_est_111115 .
+[LOG][RUNTIME](2026-05-16-03-22-26) start executing config: scale-layer_1024layers_1024layers_megatron_est_222622 .
+[LOG][RUNTIME](2026-05-16-03-33-23) end executing config: scale-layer_1024layers_1024layers_megatron_est_222622 .
+-------- scale-layer End-to-end throughput --------
+Size	 Batch Size	 Time(s)	 Thpt(samples/s)
+16layers	 1024.0		 4.30		 238.18
+128layers	 1024.0		 28.72		 35.65
+32layers	 1024.0		 7.20		 142.25
+64layers	 1024.0		 15.73		 65.09
+256layers	 1024.0		 54.77		 18.70
+1024layers	 1024.0		 210.71		 4.86
+8layers	 1024.0		 2.66		 384.59
+512layers	 1024.0		 108.61		 9.43
+Config
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/scale-layer/16layers/scale-layer_16layers_16layers_megatron_est_4457_rank6.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/scale-layer/128layers/scale-layer_128layers_128layers_megatron_est_30088_rank2.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/scale-layer/32layers/scale-layer_32layers_32layers_megatron_est_7563_rank5.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/scale-layer/64layers/scale-layer_64layers_64layers_megatron_est_16335_rank4.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/scale-layer/256layers/scale-layer_256layers_256layers_megatron_est_57593_rank6.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/scale-layer/1024layers/scale-layer_1024layers_1024layers_megatron_est_222622_rank0.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/scale-layer/8layers/scale-layer_8layers_8layers_megatron_est_2876_rank4.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/scale-layer/512layers/scale-layer_512layers_512layers_megatron_est_111115_rank2.csv.json
+[LOG][SEARCH](2026-05-16-07-30-46) start searching for mbs, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-07-30-46) end searching for mbs, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-07-31-54) start searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-07-31-55) end searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-07-32-09) start searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-07-32-09) end searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-07-32-18) start searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-07-32-18) end searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-07-32-28) start searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-07-32-28) end searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][RUNTIME](2026-05-16-07-40-45) start executing config: gpt_2_6B_32layers_megatron_est_11577 .
+[LOG][RUNTIME](2026-05-16-07-42-41) end executing config: gpt_2_6B_32layers_megatron_est_11577 .
+[LOG][RUNTIME](2026-05-16-07-42-41) start executing config: gpt_2_6B_32layers_megatron_est_22820 .
+[LOG][RUNTIME](2026-05-16-07-44-48) end executing config: gpt_2_6B_32layers_megatron_est_22820 .
+[LOG][RUNTIME](2026-05-16-07-44-48) start executing config: gpt_2_6B_32layers_megatron_est_90282 .
+[LOG][RUNTIME](2026-05-16-07-51-59) end executing config: gpt_2_6B_32layers_megatron_est_90282 .
+[LOG][RUNTIME](2026-05-16-07-51-59) start executing config: gpt_2_6B_32layers_megatron_est_180231 .
+[LOG][RUNTIME](2026-05-16-08-10-27) end executing config: gpt_2_6B_32layers_megatron_est_180231 .
+-------- mbs End-to-end throughput --------
+Size	 Batch Size	 Time(s)	 Thpt(samples/s)
+2048	 2048.0		 149.30		 13.72
+256	 256.0		 26.35		 9.72
+4096	 4096.0		 329.76		 12.42
+512	 512.0		 22.90		 22.36
+Config
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/mbs/2048/gpt_2_6B_32layers_megatron_est_90282_rank4.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/mbs/256/gpt_2_6B_32layers_megatron_est_11577_rank6.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/mbs/4096/gpt_2_6B_32layers_megatron_est_180231_rank4.csv.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/mbs/512/gpt_2_6B_32layers_megatron_est_22820_rank5.csv.json

@@ -1,0 +1,454 @@
+/usr/local/lib/python3.8/dist-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[W socket.cpp:401] [c10d] The server socket cannot be initialized on [::]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[FlexPipe] using world size: 32, data-parallel-size: [[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]], tensor-model-parallel size: [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], pipeline-model-parallel size: 1 interleave-factor: 1
+using torch.float16 for parameters ...
+------------------------ arguments ------------------------
+  accumulate_allreduce_grads_in_fp32 .............. False
+  adam_beta1 ...................................... 0.9
+  adam_beta2 ...................................... 0.999
+  adam_eps ........................................ 1e-08
+  adlr_autoresume ................................. False
+  adlr_autoresume_interval ........................ 1000
+  algo_of_each_op ................................. [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+  apply_query_key_layer_scaling ................... True
+  apply_residual_connection_post_layernorm ........ False
+  attention_dropout ............................... 0.1
+  attention_softmax_in_fp32 ....................... False
+  batch_size ...................................... None
+  bert_binary_head ................................ True
+  bert_load ....................................... None
+  bf16 ............................................ False
+  bias_dropout_fusion ............................. True
+  bias_gelu_fusion ................................ True
+  biencoder_projection_dim ........................ 0
+  biencoder_shared_query_context_model ............ False
+  block_data_path ................................. None
+  checkpoint_activations .......................... [True, True, True, True, True, True, True, True, True, False]
+  checkpoint_num_layers ........................... 1
+  checkpoint_stages ............................... []
+  clip_grad ....................................... 1.0
+  consumed_train_samples .......................... 0
+  consumed_valid_samples .......................... 0
+  data_impl ....................................... mmap
+  data_parallel_size_of_each_op ................... [[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
+  data_path ....................................... None
+  dataloader_type ................................. single
+  DDP_impl ........................................ local
+  decoder_seq_length .............................. None
+  distribute_checkpointed_activations ............. False
+  distributed_backend ............................. nccl
+  embedding_path .................................. None
+  empty_unused_memory_level ....................... 0
+  encoder_seq_length .............................. 2048
+  eod_mask_loss ................................... False
+  eval_interval ................................... 1000
+  eval_iters ...................................... 0
+  evidence_data_path .............................. None
+  exit_duration_in_mins ........................... None
+  exit_interval ................................... None
+  ffn_hidden_size ................................. 20480
+  finetune ........................................ False
+  flexpipe_config ................................. ../logs-large/aceso/configs/gpt/13B/top_configs/gpt_13B_10stages_2026-5-15-7-0-48.json
+  fp16 ............................................ True
+  fp16_lm_cross_entropy ........................... False
+  fp32_residual_connection ........................ False
+  global_batch_size ............................... 1024
+  hidden_dropout .................................. 0.1
+  hidden_size ..................................... 5120
+  hysteresis ...................................... 2
+  ict_head_size ................................... None
+  ict_load ........................................ None
+  img_dim ......................................... 224
+  indexer_batch_size .............................. 128
+  indexer_log_interval ............................ 1000
+  init_method_std ................................. 0.02
+  init_method_xavier_uniform ...................... False
+  initial_loss_scale .............................. 4294967296
+  interleave_factor ............................... 1
+  kv_channels ..................................... 128
+  layernorm_epsilon ............................... 1e-05
+  lazy_mpu_init ................................... None
+  load ............................................ None
+  local_rank ...................................... 0
+  log_batch_size_to_tensorboard ................... False
+  log_interval .................................... 1
+  log_learning_rate_to_tensorboard ................ True
+  log_loss_scale_to_tensorboard ................... True
+  log_name ........................................ gpt_13B_10stages_2026-5-15-7-0-48
+  log_num_zeros_in_grad ........................... False
+  log_params_norm ................................. False
+  log_path ........................................ ../logs-large/aceso/runtime/gpt/13B/
+  log_timers_to_tensorboard ....................... False
+  log_validation_ppl_to_tensorboard ............... False
+  loss_scale ...................................... None
+  loss_scale_window ............................... 1000
+  lr .............................................. 0.00015
+  lr_decay_iters .................................. 320000
+  lr_decay_samples ................................ None
+  lr_decay_style .................................. cosine
+  lr_warmup_fraction .............................. 0.01
+  lr_warmup_iters ................................. 0
+  lr_warmup_samples ............................... 0
+  make_vocab_size_divisible_by .................... 128
+  mask_prob ....................................... 0.15
+  masked_softmax_fusion ........................... True
+  max_position_embeddings ......................... 2048
+  merge_file ...................................... vocabs/gpt2-merges.txt
+  micro_batch_size ................................ 8
+  min_loss_scale .................................. 1.0
+  min_lr .......................................... 1e-05
+  mmap_warmup ..................................... False
+  model_name ...................................... gpt
+  model_parallel_size ............................. None
+  model_parallel_size_of_each_op .................. [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+  no_load_optim ................................... None
+  no_load_rng ..................................... None
+  no_save_optim ................................... None
+  no_save_rng ..................................... None
+  num_attention_heads ............................. 40
+  num_channels .................................... 3
+  num_classes ..................................... 1000
+  num_gpus ........................................ [4, 4, 4, 4, 4, 4, 2, 2, 2, 2]
+  num_layers ...................................... 40
+  num_layers_per_virtual_pipeline_stage ........... None
+  num_ops_in_each_stage ........................... [65, 63, 62, 65, 65, 64, 26, 38, 42, 33]
+  num_stages ...................................... 10
+  num_workers ..................................... 2
+  onnx_safe ....................................... None
+  openai_gelu ..................................... False
+  optimizer ....................................... adam
+  override_lr_scheduler ........................... False
+  params_dtype .................................... torch.float16
+  patch_dim ....................................... 16
+  pipeline_model_parallel_size .................... 1
+  prof_cache_file ................................. None
+  prof_mbs_list ................................... None
+  prof_memory_only ................................ False
+  prof_model_name ................................. all
+  prof_model_size ................................. all
+  prof_node_rank .................................. None
+  prof_num_nodes .................................. None
+  prof_path ....................................... None
+  prof_ref_data ................................... None
+  prof_repeat_threshold ........................... None
+  prof_repeat_times ............................... [50]
+  prof_skip_running ............................... False
+  prof_time_only .................................. False
+  prof_tp_size .................................... None
+  prof_warmup_threshold ........................... None
+  prof_warmup_times ............................... 20
+  query_in_block_prob ............................. 0.1
+  rampup_batch_size ............................... None
+  rank ............................................ 0
+  recompute_ops ................................... [[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0], [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1], [1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], [0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0], [0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0], [0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+  reset_attention_mask ............................ False
+  reset_position_ids .............................. False
+  resharding_stages ............................... [False, False, False, False, False, False, False, False, False, False]
+  retriever_report_topk_accuracies ................ []
+  retriever_score_scaling ......................... False
+  retriever_seq_length ............................ 256
+  sample_rate ..................................... 1.0
+  save ............................................ None
+  save_interval ................................... None
+  scatter_gather_tensors_in_pipeline .............. True
+  seed ............................................ 1234
+  seq_length ...................................... 2048
+  sgd_momentum .................................... 0.9
+  short_seq_prob .................................. 0.1
+  split ........................................... 949,50,1
+  tensor_model_parallel_size ...................... 1
+  tensorboard_dir ................................. None
+  tensorboard_log_interval ........................ 1
+  tensorboard_queue_size .......................... 1000
+  titles_data_path ................................ None
+  tokenizer_type .................................. GPT2BPETokenizer
+  train_iters ..................................... 3
+  train_samples ................................... None
+  use_checkpoint_lr_scheduler ..................... False
+  use_contiguous_buffers_in_ddp ................... False
+  use_cpu_initialization .......................... None
+  use_one_sent_docs ............................... False
+  virtual_pipeline_model_parallel_size ............ 1
+  vocab_extra_ids ................................. 0
+  vocab_file ...................................... vocabs/gpt2-vocab.json
+  warmup .......................................... None
+  weight_decay .................................... 0.01
+  world_size ...................................... 32
+-------------------- end of arguments ---------------------
+setting number of micro-batches to constant 128
+> building GPT2BPETokenizer tokenizer ...
+ > padded vocab (size: 50257) with 47 dummy tokens (new size: 50304)
+> initializing torch distributed ...
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+[W socket.cpp:558] [c10d] The client socket cannot be initialized to connect to [x08l11245.cloud.sqa.na131.tbsite.net]:8000 (errno: 97 - Address family not supported by protocol).
+> initializing FlexPipe...
+Traceback (most recent call last):
+  File "pretrain_gpt.py", line 129, in <module>
+    pretrain(train_valid_test_datasets_provider, model_provider, forward_step_func,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/training.py", line 113, in pretrain
+    initialize_megatron(extra_args_provider=extra_args_provider,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 86, in initialize_megatron
+Traceback (most recent call last):
+    finish_mpu_init()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 67, in finish_mpu_init
+  File "pretrain_gpt.py", line 129, in <module>
+    _initialize_distributed()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 208, in _initialize_distributed
+    mpu.initialize_model_parallel_flexpipe()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 280, in initialize_model_parallel_flexpipe
+    get_group(ranks)
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 559, in get_group
+Traceback (most recent call last):
+    all_groups[group_bits] = torch.distributed.new_group(list(ranks))       
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 2998, in new_group
+  File "pretrain_gpt.py", line 129, in <module>
+    _store_based_barrier(global_rank, default_store, timeout)
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 255, in _store_based_barrier
+    pretrain(train_valid_test_datasets_provider, model_provider, forward_step_func,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/training.py", line 113, in pretrain
+    raise RuntimeError(
+RuntimeError: Timed out initializing process group in store based barrier on rank: 6, for key: store_based_barrier_key:54 (world_size=32, worker_count=8, timeout=0:30:00)
+    initialize_megatron(extra_args_provider=extra_args_provider,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 86, in initialize_megatron
+    finish_mpu_init()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 67, in finish_mpu_init
+    _initialize_distributed()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 208, in _initialize_distributed
+    mpu.initialize_model_parallel_flexpipe()
+      File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 280, in initialize_model_parallel_flexpipe
+pretrain(train_valid_test_datasets_provider, model_provider, forward_step_func,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/training.py", line 113, in pretrain
+    get_group(ranks)
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 559, in get_group
+    initialize_megatron(extra_args_provider=extra_args_provider,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 86, in initialize_megatron
+    finish_mpu_init()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 67, in finish_mpu_init
+    all_groups[group_bits] = torch.distributed.new_group(list(ranks))       
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 2998, in new_group
+    _initialize_distributed()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 208, in _initialize_distributed
+    mpu.initialize_model_parallel_flexpipe()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 280, in initialize_model_parallel_flexpipe
+    get_group(ranks)
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 559, in get_group
+    all_groups[group_bits] = torch.distributed.new_group(list(ranks))       
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 2998, in new_group
+    _store_based_barrier(global_rank, default_store, timeout)
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 255, in _store_based_barrier
+    raise RuntimeError(
+RuntimeError: Timed out initializing process group in store based barrier on rank: 1, for key: store_based_barrier_key:54 (world_size=32, worker_count=8, timeout=0:30:00)
+    _store_based_barrier(global_rank, default_store, timeout)
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 255, in _store_based_barrier
+    raise RuntimeError(
+RuntimeError: Timed out initializing process group in store based barrier on rank: 2, for key: store_based_barrier_key:54 (world_size=32, worker_count=8, timeout=0:30:00)
+Traceback (most recent call last):
+  File "pretrain_gpt.py", line 129, in <module>
+Traceback (most recent call last):
+  File "pretrain_gpt.py", line 129, in <module>
+Traceback (most recent call last):
+  File "pretrain_gpt.py", line 129, in <module>
+    pretrain(train_valid_test_datasets_provider, model_provider, forward_step_func,    pretrain(train_valid_test_datasets_provider, model_provider, forward_step_func,
+
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/training.py", line 113, in pretrain
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/training.py", line 113, in pretrain
+    initialize_megatron(extra_args_provider=extra_args_provider,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 86, in initialize_megatron
+    initialize_megatron(extra_args_provider=extra_args_provider,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 86, in initialize_megatron
+    finish_mpu_init()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 67, in finish_mpu_init
+    finish_mpu_init()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 67, in finish_mpu_init
+    _initialize_distributed()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 208, in _initialize_distributed
+    _initialize_distributed()
+Traceback (most recent call last):
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 208, in _initialize_distributed
+  File "pretrain_gpt.py", line 129, in <module>
+        pretrain(train_valid_test_datasets_provider, model_provider, forward_step_func,mpu.initialize_model_parallel_flexpipe()
+
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 280, in initialize_model_parallel_flexpipe
+      File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/training.py", line 113, in pretrain
+mpu.initialize_model_parallel_flexpipe()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 280, in initialize_model_parallel_flexpipe
+    initialize_megatron(extra_args_provider=extra_args_provider,
+    get_group(ranks)
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 86, in initialize_megatron
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 559, in get_group
+    get_group(ranks)
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 559, in get_group
+    finish_mpu_init()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 67, in finish_mpu_init
+    _initialize_distributed()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 208, in _initialize_distributed
+    all_groups[group_bits] = torch.distributed.new_group(list(ranks))       
+    all_groups[group_bits] = torch.distributed.new_group(list(ranks))         File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 2998, in new_group
+
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 2998, in new_group
+    mpu.initialize_model_parallel_flexpipe()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 280, in initialize_model_parallel_flexpipe
+    get_group(ranks)
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 559, in get_group
+    all_groups[group_bits] = torch.distributed.new_group(list(ranks))       
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 2998, in new_group
+    pretrain(train_valid_test_datasets_provider, model_provider, forward_step_func,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/training.py", line 113, in pretrain
+    initialize_megatron(extra_args_provider=extra_args_provider,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 86, in initialize_megatron
+    finish_mpu_init()    
+_store_based_barrier(global_rank, default_store, timeout)
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 67, in finish_mpu_init
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 255, in _store_based_barrier
+    _store_based_barrier(global_rank, default_store, timeout)
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 255, in _store_based_barrier
+    _initialize_distributed()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 208, in _initialize_distributed
+        raise RuntimeError(
+raise RuntimeError(
+RuntimeError    mpu.initialize_model_parallel_flexpipe(): Timed out initializing process group in store based barrier on rank: 4, for key: store_based_barrier_key:54 (world_size=32, worker_count=8, timeout=0:30:00)
+RuntimeError
+: Timed out initializing process group in store based barrier on rank: 5, for key: store_based_barrier_key:54 (world_size=32, worker_count=8, timeout=0:30:00)
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 280, in initialize_model_parallel_flexpipe
+    get_group(ranks)
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 559, in get_group
+    _store_based_barrier(global_rank, default_store, timeout)
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 255, in _store_based_barrier
+Traceback (most recent call last):
+    all_groups[group_bits] = torch.distributed.new_group(list(ranks))       
+  File "pretrain_gpt.py", line 129, in <module>
+    raise RuntimeError(
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 2998, in new_group
+RuntimeError: Timed out initializing process group in store based barrier on rank: 0, for key: store_based_barrier_key:54 (world_size=32, worker_count=8, timeout=0:30:00)
+    pretrain(train_valid_test_datasets_provider, model_provider, forward_step_func,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/training.py", line 113, in pretrain
+    initialize_megatron(extra_args_provider=extra_args_provider,
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 86, in initialize_megatron
+    finish_mpu_init()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 67, in finish_mpu_init
+    _store_based_barrier(global_rank, default_store, timeout)
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 255, in _store_based_barrier
+    _initialize_distributed()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/initialize.py", line 208, in _initialize_distributed
+    raise RuntimeError(
+    mpu.initialize_model_parallel_flexpipe()
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 280, in initialize_model_parallel_flexpipe
+RuntimeError: Timed out initializing process group in store based barrier on rank: 3, for key: store_based_barrier_key:54 (world_size=32, worker_count=8, timeout=0:30:00)
+    get_group(ranks)
+  File "/home/liminglong.lml/sxz/SuperScaler/runtime/megatron/mpu/initialize.py", line 559, in get_group
+    all_groups[group_bits] = torch.distributed.new_group(list(ranks))       
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 2998, in new_group
+    _store_based_barrier(global_rank, default_store, timeout)
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/distributed_c10d.py", line 255, in _store_based_barrier
+    raise RuntimeError(
+RuntimeError: Timed out initializing process group in store based barrier on rank: 7, for key: store_based_barrier_key:54 (world_size=32, worker_count=8, timeout=0:30:00)
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 0 (pid: 119381) of binary: /usr/bin/python3
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/launch.py", line 193, in <module>
+    main()
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/launch.py", line 189, in main
+    launch(args)
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/launch.py", line 174, in launch
+    run(args)
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/run.py", line 752, in run
+    elastic_launch(
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/usr/local/lib/python3.8/dist-packages/torch/distributed/launcher/api.py", line 245, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+pretrain_gpt.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-05-15_09:01:33
+  host      : x08l11245.cloud.sqa.na131
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 119382)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-05-15_09:01:33
+  host      : x08l11245.cloud.sqa.na131
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 119383)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2026-05-15_09:01:33
+  host      : x08l11245.cloud.sqa.na131
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 119384)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-05-15_09:01:33
+  host      : x08l11245.cloud.sqa.na131
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 119385)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2026-05-15_09:01:33
+  host      : x08l11245.cloud.sqa.na131
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 119386)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2026-05-15_09:01:33
+  host      : x08l11245.cloud.sqa.na131
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 119387)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2026-05-15_09:01:33
+  host      : x08l11245.cloud.sqa.na131
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 119388)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-05-15_09:01:33
+  host      : x08l11245.cloud.sqa.na131
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 119381)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

@@ -1,0 +1,228 @@
+------------------------ arguments ------------------------
+  adaptive_hyper_parameters ....................... 5
+  add_action_finetune_algo ........................ False
+  add_action_finetune_dim ......................... False
+  add_action_tp_dp_exchange ....................... False
+  add_action_tune_tp_dp ........................... False
+  check_recompute_with_group ...................... False
+  config_save_path ................................ /home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/8layers/
+  config_suffix ................................... 2026-5-15-12-57-52
+  consider_collective_memory ...................... False
+  consider_reserved_space ......................... True
+  consider_shared_space ........................... True
+  continue_when_fail .............................. True
+  decoder_seq_len ................................. 512
+  end_num_stages .................................. 8
+  finetune_after_trial ............................ 0
+  finetune_tp_dp_after_trial ...................... False
+  flex_recompute .................................. True
+  forbid_turn_back ................................ False
+  global_batch_size ............................... 1024
+  high_memory_rate ................................ 0.9
+  init_dim ........................................ tp
+  initial_point ................................... balance
+  log_path ........................................ /home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/search/scale-layer/8layers/
+  max_num_hops .................................... 7
+  max_num_trials .................................. 100
+  max_op_move_steps ............................... 5
+  max_tp .......................................... 8
+  memory_limit .................................... 48000
+  memory_main_params .............................. 2
+  memory_optimizer ................................ 4
+  memory_pred_type ................................ MAX
+  micro_batch_size ................................ [1, 2, 4, 8]
+  min_mbs ......................................... 1
+  model_name ...................................... scale-layer
+  model_size ...................................... 8layers
+  multi_process ................................... True
+  num_algos ....................................... 2
+  num_gpus ........................................ 8
+  num_gpus_per_node ............................... 8
+  num_layers ...................................... 8
+  num_nodes ....................................... 1
+  num_of_saved_configs ............................ 1
+  num_partners_in_op_mig .......................... 1
+  only_top_1_target ............................... False
+  op_group_size ................................... 1
+  peak_mem_in_backward ............................ 1000
+  predict_delta_time .............................. True
+  print_debug_info ................................ False
+  print_gpu_mig_details ........................... False
+  print_move_op_details ........................... False
+  print_recomp_debug_info ......................... False
+  print_recompute_ops ............................. True
+  profiled_time_path .............................. /home/liminglong.lml/sxz/SuperScaler/profiler/profiled-time-eurosys/
+  random_order_actions ............................ False
+  resharding ...................................... True
+  save_to_csv ..................................... None
+  seq_len ......................................... 2048
+  simple_prim_mbs ................................. False
+  simple_prim_mig ................................. False
+  sort_metric ..................................... max_stage_time
+  start_num_stages ................................ 1
+  support_comm_predict ............................ False
+  time_budget_per_trial ........................... 200
+  time_budget_total ............................... 200
+-------------------- end of arguments ---------------------
+Starting CEGIS search with 1 to 8 stages...
+working on num_stages = 1
+start|2876.52|3893.31| op = [107]| tp = [1, ] | dp = [8, ] | algo = [0, ] | rc = [0] | gpus = [8] | micro_bs = 8 | time = [2876] | memory = [3893]
+line146:config.memory_list:[3893.3050000000003]
+line147:config.time_list:[2876.516389247924]
+------------------------------------------------------------------------------------------------------
+cegis_search for the 0th times
+开始求解check...
+line351:
+tp_list[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+dp_list[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+algo_list[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+decode|8008.41|2013.32| op = [107]| tp = [2, ] | dp = [4, ] | algo = [0, ] | rc = [0] | gpus = [8] | micro_bs = 4 | time = [8008] | memory = [2013]
+验证解
+line146:config.memory_list:[2013.323]
+line147:config.time_list:[8008.411466495851]
+求解成功
+config has been saved to /home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/8layers/scale-layer_8layers_1stages_2026-5-15-12-57-52.json
+
+========== Best Result (num_stages = 1) ==========
+|8008.41|2013.32| op = [107]| tp = [2, ] | dp = [4, ] | algo = [0, ] | rc = [0] | gpus = [8] | micro_bs = 4 | time = [8008] | memory = [2013]
+[stage 0 recompute_ops] 
+stage 0: 
+[stage 0 algo1] 
+start|2876.52|3893.31| op = [107]| tp = [1, ] | dp = [8, ] | algo = [0, ] | rc = [0] | gpus = [8] | micro_bs = 8 | time = [2876] | memory = [3893]
+decode|8008.41|2013.32| op = [107]| tp = [2, ] | dp = [4, ] | algo = [0, ] | rc = [0] | gpus = [8] | micro_bs = 4 | time = [8008] | memory = [2013]
+
+num_targets: []
+num_hops: []
+search time = 0.00 s.  [0] 
+num_explored_cases = 0
+time trend: [2876]
+
+stage 1 search time: 0.04 s
+working on num_stages = 2
+start|2890.67|5204.59| op = [54, 53]| tp = [1, 1, ] | dp = [4, 4, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [4, 4] | micro_bs = 8 | time = [1690, 2890] | memory = [5204, 4012]
+line146:config.memory_list:[5204.59, 4012.2989999999995]
+line147:config.time_list:[1690.471009292694, 2890.665577386736]
+------------------------------------------------------------------------------------------------------
+cegis_search for the 0th times
+开始求解check...
+line351:
+tp_list[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+dp_list[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+algo_list[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+decode|2890.67|5204.59| op = [54, 53]| tp = [1, 1, ] | dp = [4, 4, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [4, 4] | micro_bs = 8 | time = [1690, 2890] | memory = [5204, 4012]
+验证解
+line146:config.memory_list:[5204.59, 4012.2989999999995]
+line147:config.time_list:[1690.471009292694, 2890.665577386736]
+求解成功
+config has been saved to /home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/8layers/scale-layer_8layers_2stages_2026-5-15-12-57-52.json
+
+========== Best Result (num_stages = 2) ==========
+|2890.67|5204.59| op = [54, 53]| tp = [1, 1, ] | dp = [4, 4, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [4, 4] | micro_bs = 8 | time = [1690, 2890] | memory = [5204, 4012]
+[stage 0 recompute_ops] 
+stage 0: 
+[stage 1 recompute_ops] 
+stage 1: 
+[stage 0 algo1] 
+[stage 1 algo1] 
+start|2890.67|5204.59| op = [54, 53]| tp = [1, 1, ] | dp = [4, 4, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [4, 4] | micro_bs = 8 | time = [1690, 2890] | memory = [5204, 4012]
+decode|2890.67|5204.59| op = [54, 53]| tp = [1, 1, ] | dp = [4, 4, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [4, 4] | micro_bs = 8 | time = [1690, 2890] | memory = [5204, 4012]
+
+num_targets: []
+num_hops: []
+search time = 0.00 s.  [0] 
+num_explored_cases = 0
+time trend: [2890]
+
+stage 2 search time: 0.20 s
+working on num_stages = 3
+start|3734.84|7182.89| op = [54, 27, 26]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1707, 1339, 3734] | memory = [7182, 5404, 5348]
+line465:max stage:2, min stage:1, max_value:3734.839824185117, min_value:1339.7345535396025
+fix|3770.39|7182.89| op = [54, 28, 25]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1709, 1551, 3770] | memory = [7182, 5916, 5332]
+cv:0.4313297243228635
+line465:max stage:2, min stage:1, max_value:3770.386697985826, min_value:1551.561999340312
+fix|3675.97|7182.89| op = [54, 29, 24]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1709, 1645, 3675] | memory = [7182, 5916, 5332]
+cv:0.402119502357927
+line465:max stage:2, min stage:1, max_value:3675.9679129858255, min_value:1645.9807843403114
+fix|3565.98|7182.89| op = [54, 30, 23]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1709, 1755, 3565] | memory = [7182, 7068, 4756]
+cv:0.36887592219675347
+line465:max stage:2, min stage:0, max_value:3565.981213985826, min_value:1709.0428731161123
+fix|3344.40|7230.89| op = [55, 30, 22]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1742, 1676, 3344] | memory = [7230, 7056, 4492]
+cv:0.34205264842793665
+line465:max stage:2, min stage:1, max_value:3344.3992130080064, min_value:1676.3584090357672
+fix|3328.88|7230.89| op = [55, 31, 21]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1742, 1691, 3328] | memory = [7230, 7076, 4480]
+cv:0.33709983856668446
+line465:max stage:2, min stage:1, max_value:3328.882085231201, min_value:1691.879065258962
+fix|3311.99|7230.89| op = [55, 32, 20]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1742, 1702, 3311] | memory = [7230, 7100, 4460]
+cv:0.332713254699416
+line465:max stage:2, min stage:1, max_value:3311.986245208643, min_value:1702.5841352364032
+fix|3299.33|7230.89| op = [55, 33, 19]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1742, 1721, 3299] | memory = [7230, 7116, 4460]
+cv:0.3277276122344119
+line465:max stage:2, min stage:1, max_value:3299.3271670080067, min_value:1721.4304550357672
+fix|3284.55|7230.89| op = [55, 34, 18]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1742, 1771, 3284] | memory = [7230, 7196, 4436]
+cv:0.31779712148918704
+line465:max stage:2, min stage:0, max_value:3284.5495404605063, min_value:1742.9935729829963
+fix|3263.53|7614.88| op = [56, 34, 17]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1864, 1828, 3263] | memory = [7614, 7228, 4404]
+cv:0.28822935056468146
+line465:max stage:2, min stage:1, max_value:3263.530825409251, min_value:1828.0609548532134
+fix|3213.60|7614.88| op = [56, 35, 16]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1864, 1843, 3213] | memory = [7614, 7260, 4356]
+cv:0.2779197472952925
+line465:max stage:2, min stage:1, max_value:3213.6020551108095, min_value:1843.2097785547726
+fix|3196.47|7614.88| op = [56, 36, 15]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1864, 1854, 3196] | memory = [7614, 7284, 4336]
+cv:0.2735345916478689
+line465:max stage:2, min stage:1, max_value:3196.4730430882514, min_value:1854.1480205322139
+fix|3183.94|7614.88| op = [56, 37, 14]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1864, 1872, 3183] | memory = [7614, 7300, 4336]
+cv:0.2688090931731005
+line465:max stage:2, min stage:0, max_value:3183.941853887615, min_value:1864.0667640876493
+fix|3146.45|7614.88| op = [57, 37, 13]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1912, 1831, 3146] | memory = [7614, 7360, 4316]
+cv:0.26190566887123823
+line465:max stage:2, min stage:1, max_value:3146.454129681729, min_value:1831.7535121256915
+fix|3182.00|7872.74| op = [57, 38, 12]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1914, 2043, 3182] | memory = [7614, 7872, 4056]
+cv:0.23927790929545154
+line465:max stage:2, min stage:0, max_value:3182.001003482438, min_value:1914.6030435929952
+fix|3087.16|8478.88| op = [58, 38, 11]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1970, 2027, 3087] | memory = [8478, 6720, 4056]
+cv:0.21747727333354236
+line465:max stage:2, min stage:0, max_value:3087.1559084824376, min_value:1970.022062592995
+fix|2975.42|8490.88| op = [59, 38, 10]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1965, 1916, 2975] | memory = [8490, 7344, 2728]
+cv:0.21348560049287726
+line465:max stage:2, min stage:1, max_value:2975.422040985826, min_value:1916.3020333403115
+fix|2753.85|8490.88| op = [59, 39, 9]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1963, 1873, 2753] | memory = [8490, 7360, 2424]
+cv:0.17990949614909588
+line465:max stage:2, min stage:1, max_value:2753.851995391003, min_value:1873.9620077454883
+fix|2738.33|8490.88| op = [59, 40, 8]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1963, 1889, 2738] | memory = [8490, 7380, 2412]
+cv:0.17468575006452955
+line465:max stage:2, min stage:1, max_value:2738.3348676141977, min_value:1889.482663968683
+fix|2721.44|8490.88| op = [59, 41, 7]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1963, 1900, 2721] | memory = [8490, 7404, 2392]
+cv:0.16994301750384325
+line465:max stage:2, min stage:1, max_value:2721.4390275916394, min_value:1900.1877339461246
+fix|2708.78|8490.88| op = [59, 42, 6]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1963, 1919, 2708] | memory = [8490, 7420, 2392]
+cv:0.16483796426812625
+line465:max stage:2, min stage:1, max_value:2708.7799493910034, min_value:1919.0340537454886
+fix|2694.00|8490.88| op = [59, 43, 5]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1964, 1968, 2694] | memory = [8490, 7500, 2368]
+cv:0.15528666960818152
+line465:max stage:2, min stage:0, max_value:2694.0023228435025, min_value:1964.1326216797972
+fix|2671.79|8506.88| op = [60, 43, 4]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1982, 1975, 2671] | memory = [8506, 7544, 2168]
+cv:0.14786529236878054
+line465:max stage:2, min stage:1, max_value:2671.7917069433906, min_value:1975.3262541687732
+fix|2621.86|8506.88| op = [60, 44, 3]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1981, 1990, 2621] | memory = [8506, 7576, 2120]
+cv:0.13635197691617265
+line465:max stage:2, min stage:0, max_value:2621.862936644949, min_value:1981.7889300283996
+fix|2604.71|8524.88| op = [61, 44, 2]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1995, 1984, 2604] | memory = [8524, 7560, 2074]
+cv:0.13197790996918976
+line465:max stage:2, min stage:1, max_value:2604.713273012875, min_value:1984.5448186811652
+fix|2553.82|8524.88| op = [61, 45, 1]| tp = [1, 1, 1, ] | dp = [4, 2, 2, ] | algo = [0, 0, 0, ] | rc = [0, 0, 0] | gpus = [4, 2, 2] | micro_bs = 8 | time = [1995, 2035, 2553] | memory = [8524, 7592, 2058]
+cv:0.11579865521660136
+line465:max stage:2, min stage:0, max_value:2553.8170070128754, min_value:1995.945383102029
+Traceback (most recent call last):
+  File "cegis_gpt_search.py", line 647, in <module>
+    result_dict[num_stages] = run_search(num_stages) #开始搜索
+  File "cegis_gpt_search.py", line 583, in run_search
+    best_config=cegis_search(config, num_stages)
+  File "cegis_gpt_search.py", line 521, in cegis_search
+    config = fix(config)
+  File "cegis_gpt_search.py", line 473, in fix
+    _config = get_config(num_ops_list, tp_list, dp_list, recompute_list, mbs, config.global_bs, full_op_list, algo_list)
+  File "/home/liminglong.lml/sxz/SuperScaler/search/aceso_utils.py", line 105, in get_config
+    num_gpus = tp_size_list[op_start_index] * dp_size_list[op_start_index],
+IndexError: list index out of range

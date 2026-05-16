@@ -1,0 +1,4 @@
+stage-index,time,memory(total),memory(normal),memory(reserved)
+stage-0,40406.84,47841.72,43969.72,3872.00
+stage-1,34272.51,47936.06,42816.06,5120.00
+stage-2,40999.09,47968.64,43856.64,4112.00

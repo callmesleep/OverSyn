@@ -1,0 +1,2 @@
+global_batch_size,time,forward-compute,forward-send,backward-compute,backward-recv,backward-params-all-reduce,backward-embedding-all-reduce,optimizer-copy-to-main-grad,optimizer-unscale-and-check-inf,optimizer,batch-generator
+1024,7199.72,2213.21,0.33,3619.00,26.74,6.20,0.50,1.84,1.35,3.56,36.79

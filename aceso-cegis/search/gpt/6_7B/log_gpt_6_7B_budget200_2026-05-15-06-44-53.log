@@ -1,0 +1,85 @@
+------------------------ arguments ------------------------
+  adaptive_hyper_parameters ....................... 5
+  add_action_finetune_algo ........................ False
+  add_action_finetune_dim ......................... False
+  add_action_tp_dp_exchange ....................... False
+  add_action_tune_tp_dp ........................... False
+  check_recompute_with_group ...................... False
+  config_save_path ................................ /home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/gpt/6_7B/
+  config_suffix ................................... 2026-5-15-6-44-53
+  consider_collective_memory ...................... False
+  consider_reserved_space ......................... True
+  consider_shared_space ........................... True
+  continue_when_fail .............................. True
+  decoder_seq_len ................................. 512
+  end_num_stages .................................. 16
+  finetune_after_trial ............................ 0
+  finetune_tp_dp_after_trial ...................... False
+  flex_recompute .................................. True
+  forbid_turn_back ................................ False
+  global_batch_size ............................... 1024
+  high_memory_rate ................................ 0.9
+  init_dim ........................................ tp
+  initial_point ................................... balance
+  log_path ........................................ /home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/search/gpt/6_7B/
+  max_num_hops .................................... 7
+  max_num_trials .................................. 100
+  max_op_move_steps ............................... 5
+  max_tp .......................................... 8
+  memory_limit .................................... 48000
+  memory_main_params .............................. 2
+  memory_optimizer ................................ 4
+  memory_pred_type ................................ MAX
+  micro_batch_size ................................ [1, 2, 4, 8]
+  min_mbs ......................................... 1
+  model_name ...................................... gpt
+  model_size ...................................... 6_7B
+  multi_process ................................... True
+  num_algos ....................................... 2
+  num_gpus ........................................ 16
+  num_gpus_per_node ............................... 8
+  num_layers ...................................... 32
+  num_nodes ....................................... 2
+  num_of_saved_configs ............................ 3
+  num_partners_in_op_mig .......................... 1
+  only_top_1_target ............................... False
+  op_group_size ................................... 1
+  peak_mem_in_backward ............................ 0
+  predict_delta_time .............................. False
+  print_debug_info ................................ False
+  print_gpu_mig_details ........................... False
+  print_move_op_details ........................... False
+  print_recomp_debug_info ......................... False
+  print_recompute_ops ............................. False
+  profiled_time_path .............................. /home/liminglong.lml/sxz/SuperScaler/profiler/profiled-time-eurosys/
+  random_order_actions ............................ False
+  resharding ...................................... True
+  save_to_csv ..................................... None
+  seq_len ......................................... 2048
+  simple_prim_mbs ................................. False
+  simple_prim_mig ................................. False
+  sort_metric ..................................... max_stage_time
+  start_num_stages ................................ 1
+  support_comm_predict ............................ False
+  time_budget_per_trial ........................... 200
+  time_budget_total ............................... 200
+-------------------- end of arguments ---------------------
+Starting CEGIS search with 1 to 16 stages...
+working on num_stages = 1
+stage 1 search time: 0.00 s
+working on num_stages = 2
+start|43275.70|61056.11| op = [210, 209]| tp = [1, 1, ] | dp = [8, 8, ] | algo = [0, 0, ] | rc = [208, 209] | gpus = [8, 8] | micro_bs = 8 | time = [41104, 43275] | memory = [61056, 60840]
+line146:config.memory_list:[61056.112, 60840.073000000004]
+line147:config.time_list:[41104.826708979235, 43275.70472802231]
+------------------------------------------------------------------------------------------------------
+cegis_search for the 0th times
+Traceback (most recent call last):
+  File "cegis_gpt_search.py", line 647, in <module>
+    result_dict[num_stages] = run_search(num_stages) #开始搜索
+  File "cegis_gpt_search.py", line 583, in run_search
+    best_config=cegis_search(config, num_stages)
+  File "cegis_gpt_search.py", line 537, in cegis_search
+    solver = encode(solver, config, counter)
+  File "cegis_gpt_search.py", line 250, in encode
+    inter_table[(i, mbs, dp)] = aceso_cost_model.inter_input_time[op][bs_i][tp_i][0]
+AttributeError: module 'aceso_cost_model' has no attribute 'inter_input_time'

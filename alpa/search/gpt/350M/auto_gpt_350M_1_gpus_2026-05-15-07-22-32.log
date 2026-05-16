@@ -1,0 +1,369 @@
+mkdir -p tmp
+Working on case: (1024, 2048, 1024, 24, 16, 51200, 32, 'search', (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 1024, 24, 16, 51200, 32, 'search', (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 1 --num-devices-per-host 1 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.84 s
+ - Create train state: 1.10 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1),)
+- Profiling for submesh 0 (1, 1):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+cost[0, 0, 1]=1.874, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=261.421GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {})
+cost[0, 0, 0]=1.874, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=261.421GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {'force_batch_dim_to_mesh_dim': 0})
+Profiling for submesh 0 (1, 1) takes 39.04 seconds
+Profiled costs are: [[[1.87448265 1.87448265]]]
+Profiled max_n_succ_stages are: [[[-1 -1]]]
+--------------------------------------------------
+Compute cost saved to: compute-cost-2026-05-15-09-10-40.npy
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 618, in cluster_layers_and_slice_mesh
+    assert solution is not None, "no solution in auto stage construction."
+AssertionError: no solution in auto stage construction.
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 1024, 24, 16)  #Microbatch: 32  #GPU: 1  Parallel Config: (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 1024, 24, 16, 51200, 64, 'search', (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 1024, 24, 16, 51200, 64, 'search', (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 1 --num-devices-per-host 1 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.81 s
+ - Create train state: 1.10 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1),)
+- Profiling for submesh 0 (1, 1):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+cost[0, 0, 0]=0.963, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=131.756GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {'force_batch_dim_to_mesh_dim': 0})
+cost[0, 0, 1]=0.963, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=131.756GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {})
+Profiling for submesh 0 (1, 1) takes 39.00 seconds
+Profiled costs are: [[[0.96319097 0.96319097]]]
+Profiled max_n_succ_stages are: [[[-1 -1]]]
+--------------------------------------------------
+Compute cost saved to: compute-cost-2026-05-15-09-11-44.npy
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 618, in cluster_layers_and_slice_mesh
+    assert solution is not None, "no solution in auto stage construction."
+AssertionError: no solution in auto stage construction.
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 1024, 24, 16)  #Microbatch: 64  #GPU: 1  Parallel Config: (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 1024, 24, 16, 51200, 128, 'search', (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 1024, 24, 16, 51200, 128, 'search', (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 1 --num-devices-per-host 1 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.97 s
+ - Create train state: 1.12 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1),)
+- Profiling for submesh 0 (1, 1):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+cost[0, 0, 1]=0.511, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=67.018GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {})
+cost[0, 0, 0]=0.511, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=67.018GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {'force_batch_dim_to_mesh_dim': 0})
+Profiling for submesh 0 (1, 1) takes 37.62 seconds
+Profiled costs are: [[[0.51058635 0.51058635]]]
+Profiled max_n_succ_stages are: [[[-1 -1]]]
+--------------------------------------------------
+Compute cost saved to: compute-cost-2026-05-15-09-12-46.npy
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 618, in cluster_layers_and_slice_mesh
+    assert solution is not None, "no solution in auto stage construction."
+AssertionError: no solution in auto stage construction.
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 1024, 24, 16)  #Microbatch: 128  #GPU: 1  Parallel Config: (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 1024, 24, 16, 51200, 256, 'search', (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 1024, 24, 16, 51200, 256, 'search', (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 1 --num-devices-per-host 1 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.96 s
+ - Create train state: 1.12 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1),)
+- Profiling for submesh 0 (1, 1):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+cost[0, 0, 1]=0.270, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=34.555GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {})
+cost[0, 0, 0]=0.270, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=34.555GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {'force_batch_dim_to_mesh_dim': 0})
+Profiling for submesh 0 (1, 1) takes 39.18 seconds
+Profiled costs are: [[[0.26955354 0.26955354]]]
+Profiled max_n_succ_stages are: [[[-1 -1]]]
+--------------------------------------------------
+Compute cost saved to: compute-cost-2026-05-15-09-13-50.npy
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 618, in cluster_layers_and_slice_mesh
+    assert solution is not None, "no solution in auto stage construction."
+AssertionError: no solution in auto stage construction.
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 1024, 24, 16)  #Microbatch: 256  #GPU: 1  Parallel Config: (True, True, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 1024, 24, 16, 51200, 32, 'search', (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 1024, 24, 16, 51200, 32, 'search', (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 1 --num-devices-per-host 1 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 2.04 s
+ - Create train state: 1.12 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1),)
+- Profiling for submesh 0 (1, 1):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+cost[0, 0, 1]=1.874, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=364.448GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {})
+cost[0, 0, 0]=1.874, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=364.448GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {'force_batch_dim_to_mesh_dim': 0})
+Profiling for submesh 0 (1, 1) takes 45.07 seconds
+Profiled costs are: [[[1.87448265 1.87448265]]]
+Profiled max_n_succ_stages are: [[[-1 -1]]]
+--------------------------------------------------
+Compute cost saved to: compute-cost-2026-05-15-09-14-58.npy
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 618, in cluster_layers_and_slice_mesh
+    assert solution is not None, "no solution in auto stage construction."
+AssertionError: no solution in auto stage construction.
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 1024, 24, 16)  #Microbatch: 32  #GPU: 1  Parallel Config: (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 1024, 24, 16, 51200, 64, 'search', (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 1024, 24, 16, 51200, 64, 'search', (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 1 --num-devices-per-host 1 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.80 s
+ - Create train state: 1.10 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1),)
+- Profiling for submesh 0 (1, 1):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+cost[0, 0, 0]=0.963, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=183.269GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {'force_batch_dim_to_mesh_dim': 0})
+cost[0, 0, 1]=0.963, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=183.269GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {})
+Profiling for submesh 0 (1, 1) takes 43.67 seconds
+Profiled costs are: [[[0.96319097 0.96319097]]]
+Profiled max_n_succ_stages are: [[[-1 -1]]]
+--------------------------------------------------
+Compute cost saved to: compute-cost-2026-05-15-09-16-03.npy
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 618, in cluster_layers_and_slice_mesh
+    assert solution is not None, "no solution in auto stage construction."
+AssertionError: no solution in auto stage construction.
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 1024, 24, 16)  #Microbatch: 64  #GPU: 1  Parallel Config: (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 1024, 24, 16, 51200, 128, 'search', (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 1024, 24, 16, 51200, 128, 'search', (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 1 --num-devices-per-host 1 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.87 s
+ - Create train state: 1.11 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1),)
+- Profiling for submesh 0 (1, 1):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+cost[0, 0, 0]=0.511, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=92.711GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {'force_batch_dim_to_mesh_dim': 0})
+cost[0, 0, 1]=0.511, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=92.711GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {})
+Profiling for submesh 0 (1, 1) takes 42.57 seconds
+Profiled costs are: [[[0.51058635 0.51058635]]]
+Profiled max_n_succ_stages are: [[[-1 -1]]]
+--------------------------------------------------
+Compute cost saved to: compute-cost-2026-05-15-09-17-07.npy
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 618, in cluster_layers_and_slice_mesh
+    assert solution is not None, "no solution in auto stage construction."
+AssertionError: no solution in auto stage construction.
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 1024, 24, 16)  #Microbatch: 128  #GPU: 1  Parallel Config: (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 1024, 24, 16, 51200, 256, 'search', (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 1024, 24, 16, 51200, 256, 'search', (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 1 --num-devices-per-host 1 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.89 s
+ - Create train state: 1.17 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1),)
+- Profiling for submesh 0 (1, 1):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+cost[0, 0, 0]=0.270, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=47.464GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {'force_batch_dim_to_mesh_dim': 0})
+cost[0, 0, 1]=0.270, max_n_succ_stage=-1, Mem: avail=13.664GB, peak=47.464GB, intermediate=0.000GB, init=4.557GB, as_config=((1, 1), {})
+Profiling for submesh 0 (1, 1) takes 43.35 seconds
+Profiled costs are: [[[0.26955354 0.26955354]]]
+Profiled max_n_succ_stages are: [[[-1 -1]]]
+--------------------------------------------------
+Compute cost saved to: compute-cost-2026-05-15-09-18-13.npy
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 618, in cluster_layers_and_slice_mesh
+    assert solution is not None, "no solution in auto stage construction."
+AssertionError: no solution in auto stage construction.
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 1024, 24, 16)  #Microbatch: 256  #GPU: 1  Parallel Config: (True, False, 1, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  

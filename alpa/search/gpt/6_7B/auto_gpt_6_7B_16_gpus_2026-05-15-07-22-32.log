@@ -1,0 +1,369 @@
+mkdir -p tmp
+Working on case: (1024, 2048, 4096, 32, 32, 51200, 32, 'search', (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 4096, 32, 32, 51200, 32, 'search', (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 2 --num-devices-per-host 8 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.69 s
+ - Create train state: 1.47 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1), (1, 2), (1, 4), (1, 8), (2, 8))
+- Profiling for submesh 4 (2, 8):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 608, in cluster_layers_and_slice_mesh
+    compute_cost, max_n_succ_stages = get_compute_cost(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 476, in get_compute_cost
+    mesh_profiled) = distributed_profile_on_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 370, in distributed_profile_on_mesh
+    is_profiled) = profile_all(stages, compiled_outputs, meshes, num_layers,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_profiling.py", line 479, in profile_all
+    prof_result = prof_database.query("default", meshes[0].shape)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/mesh_profiling.py", line 171, in query
+    return self.data[key]
+KeyError: ('default', (2, 8))
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 4096, 32, 32)  #Microbatch: 32  #GPU: 16  Parallel Config: (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 4096, 32, 32, 51200, 64, 'search', (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 4096, 32, 32, 51200, 64, 'search', (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 2 --num-devices-per-host 8 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.52 s
+ - Create train state: 1.48 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1), (1, 2), (1, 4), (1, 8), (2, 8))
+- Profiling for submesh 4 (2, 8):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 608, in cluster_layers_and_slice_mesh
+    compute_cost, max_n_succ_stages = get_compute_cost(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 476, in get_compute_cost
+    mesh_profiled) = distributed_profile_on_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 370, in distributed_profile_on_mesh
+    is_profiled) = profile_all(stages, compiled_outputs, meshes, num_layers,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_profiling.py", line 479, in profile_all
+    prof_result = prof_database.query("default", meshes[0].shape)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/mesh_profiling.py", line 171, in query
+    return self.data[key]
+KeyError: ('default', (2, 8))
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 4096, 32, 32)  #Microbatch: 64  #GPU: 16  Parallel Config: (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 4096, 32, 32, 51200, 128, 'search', (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 4096, 32, 32, 51200, 128, 'search', (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 2 --num-devices-per-host 8 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.72 s
+ - Create train state: 1.47 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1), (1, 2), (1, 4), (1, 8), (2, 8))
+- Profiling for submesh 4 (2, 8):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 608, in cluster_layers_and_slice_mesh
+    compute_cost, max_n_succ_stages = get_compute_cost(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 476, in get_compute_cost
+    mesh_profiled) = distributed_profile_on_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 370, in distributed_profile_on_mesh
+    is_profiled) = profile_all(stages, compiled_outputs, meshes, num_layers,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_profiling.py", line 479, in profile_all
+    prof_result = prof_database.query("default", meshes[0].shape)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/mesh_profiling.py", line 171, in query
+    return self.data[key]
+KeyError: ('default', (2, 8))
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 4096, 32, 32)  #Microbatch: 128  #GPU: 16  Parallel Config: (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 4096, 32, 32, 51200, 256, 'search', (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 4096, 32, 32, 51200, 256, 'search', (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 2 --num-devices-per-host 8 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.57 s
+ - Create train state: 1.51 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1), (1, 2), (1, 4), (1, 8), (2, 8))
+- Profiling for submesh 4 (2, 8):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 608, in cluster_layers_and_slice_mesh
+    compute_cost, max_n_succ_stages = get_compute_cost(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 476, in get_compute_cost
+    mesh_profiled) = distributed_profile_on_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 370, in distributed_profile_on_mesh
+    is_profiled) = profile_all(stages, compiled_outputs, meshes, num_layers,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_profiling.py", line 479, in profile_all
+    prof_result = prof_database.query("default", meshes[0].shape)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/mesh_profiling.py", line 171, in query
+    return self.data[key]
+KeyError: ('default', (2, 8))
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 4096, 32, 32)  #Microbatch: 256  #GPU: 16  Parallel Config: (True, True, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 4096, 32, 32, 51200, 32, 'search', (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 4096, 32, 32, 51200, 32, 'search', (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 2 --num-devices-per-host 8 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.73 s
+ - Create train state: 1.48 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1), (1, 2), (1, 4), (1, 8), (2, 8))
+- Profiling for submesh 4 (2, 8):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 608, in cluster_layers_and_slice_mesh
+    compute_cost, max_n_succ_stages = get_compute_cost(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 476, in get_compute_cost
+    mesh_profiled) = distributed_profile_on_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 370, in distributed_profile_on_mesh
+    is_profiled) = profile_all(stages, compiled_outputs, meshes, num_layers,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_profiling.py", line 479, in profile_all
+    prof_result = prof_database.query("default", meshes[0].shape)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/mesh_profiling.py", line 171, in query
+    return self.data[key]
+KeyError: ('default', (2, 8))
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 4096, 32, 32)  #Microbatch: 32  #GPU: 16  Parallel Config: (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 4096, 32, 32, 51200, 64, 'search', (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 4096, 32, 32, 51200, 64, 'search', (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 2 --num-devices-per-host 8 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.49 s
+ - Create train state: 1.50 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1), (1, 2), (1, 4), (1, 8), (2, 8))
+- Profiling for submesh 4 (2, 8):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 608, in cluster_layers_and_slice_mesh
+    compute_cost, max_n_succ_stages = get_compute_cost(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 476, in get_compute_cost
+    mesh_profiled) = distributed_profile_on_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 370, in distributed_profile_on_mesh
+    is_profiled) = profile_all(stages, compiled_outputs, meshes, num_layers,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_profiling.py", line 479, in profile_all
+    prof_result = prof_database.query("default", meshes[0].shape)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/mesh_profiling.py", line 171, in query
+    return self.data[key]
+KeyError: ('default', (2, 8))
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 4096, 32, 32)  #Microbatch: 64  #GPU: 16  Parallel Config: (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 4096, 32, 32, 51200, 128, 'search', (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 4096, 32, 32, 51200, 128, 'search', (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 2 --num-devices-per-host 8 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.58 s
+ - Create train state: 1.48 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1), (1, 2), (1, 4), (1, 8), (2, 8))
+- Profiling for submesh 4 (2, 8):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 608, in cluster_layers_and_slice_mesh
+    compute_cost, max_n_succ_stages = get_compute_cost(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 476, in get_compute_cost
+    mesh_profiled) = distributed_profile_on_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 370, in distributed_profile_on_mesh
+    is_profiled) = profile_all(stages, compiled_outputs, meshes, num_layers,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_profiling.py", line 479, in profile_all
+    prof_result = prof_database.query("default", meshes[0].shape)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/mesh_profiling.py", line 171, in query
+    return self.data[key]
+KeyError: ('default', (2, 8))
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 4096, 32, 32)  #Microbatch: 128  #GPU: 16  Parallel Config: (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  
+Working on case: (1024, 2048, 4096, 32, 32, 51200, 256, 'search', (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))
+rm -rf /tmp/tmp_transfer.pkl
+python3 -u benchmark_3d_one_case.py --model gpt --niter 3 --case "(1024, 2048, 4096, 32, 32, 51200, 256, 'search', (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'}))" --num-hosts 2 --num-devices-per-host 8 --dump-result --disable-tqdm 
+mkdir -p tmp
+ - Prepare input: 1.50 s
+ - Create train state: 1.47 s
+-------------------- Automatic stage clustering --------------------
+submesh_choices: ((1, 1), (1, 2), (1, 4), (1, 8), (2, 8))
+- Profiling for submesh 4 (2, 8):
+- Generate all stage infos (Jaxpr -> HLO)
+- Compile all stages
+- Profile all stages
+Traceback (most recent call last):
+  File "benchmark_3d_one_case.py", line 92, in <module>
+    benchmark_one_case(args.model,
+  File "benchmark_3d_one_case.py", line 37, in benchmark_one_case
+    result = benchmark_gpt_bert_internal(model, case, niter, num_hosts,
+  File "/home/liminglong.lml/sxz/SuperScaler/external/alpa/benchmark_3d_one_case_gpt_bert.py", line 290, in benchmark_gpt_bert_internal
+    executable = train_step.get_executable(state, batch, rngkey)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 110, in get_executable
+    executable, _, _, _ = self._decode_args_and_get_executable(*args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 174, in _decode_args_and_get_executable
+    executable = _compile_parallel_executable(f, in_tree, out_tree_hashable,
+  File "/usr/local/lib/python3.8/dist-packages/jax/linear_util.py", line 272, in memoized_fun
+    ans = call(fun, *args)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/api.py", line 201, in _compile_parallel_executable
+    return method.compile_executable(fun, in_tree, out_tree_thunk,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/parallel_method.py", line 220, in compile_executable
+    return compile_pipeshard_executable(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 76, in compile_pipeshard_executable
+    pipeshard_config = compile_pipeshard_executable_internal(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/compile_executable.py", line 150, in compile_pipeshard_executable_internal
+    manual_stage_option) = cluster_layers_and_slice_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 608, in cluster_layers_and_slice_mesh
+    compute_cost, max_n_succ_stages = get_compute_cost(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 476, in get_compute_cost
+    mesh_profiled) = distributed_profile_on_mesh(
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_construction.py", line 370, in distributed_profile_on_mesh
+    is_profiled) = profile_all(stages, compiled_outputs, meshes, num_layers,
+  File "/usr/local/lib/python3.8/dist-packages/alpa/pipeline_parallel/stage_profiling.py", line 479, in profile_all
+    prof_result = prof_database.query("default", meshes[0].shape)
+  File "/usr/local/lib/python3.8/dist-packages/alpa/mesh_profiling.py", line 171, in query
+    return self.data[key]
+KeyError: ('default', (2, 8))
+[DEBUG] latencies = [-1]
+Type: gpt  Model Config: (1024, 2048, 4096, 32, 32)  #Microbatch: 256  #GPU: 16  Parallel Config: (True, False, 8, {'submesh_physical_shape_space': 'small_power_of_two', 'submesh_logical_shape_space': 'all', 'stage_imbalance_tolerance': 1.0, 'use_hlo_cost_model': True, 'profiling_database_filename': 'prof_database.pkl'})  Mean Time: -1.000s  Std Time: 0.000  #Params: -0.000B  TFLOPs: -1.00  TFLOPs (ckpt): -1.00  Peak Mem: -0.000G  Compilation Time: None  Global Batch Size: 1024  

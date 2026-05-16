@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "cegis_gpt_search.py", line 13, in <module>
+    from z3 import Solver
+ModuleNotFoundError: No module named 'z3'

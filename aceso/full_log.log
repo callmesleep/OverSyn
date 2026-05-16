@@ -1,0 +1,148 @@
+[LOG][SEARCH](2026-05-14-05-55-00) start searching for gpt, 1_3B, 1 nodes * 4 GPUs.
+[LOG][SEARCH](2026-05-14-05-58-20) end searching for gpt, 1_3B, 1 nodes * 4 GPUs.
+[LOG][SEARCH](2026-05-14-05-58-20) start searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-14-06-01-41) end searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-14-06-01-41) start searching for gpt, 6_7B, 2 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-14-06-05-01) end searching for gpt, 6_7B, 2 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-14-06-05-01) start searching for gpt, 13B, 4 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-14-06-08-21) end searching for gpt, 13B, 4 nodes * 8 GPUs.
+Traceback (most recent call last):
+  File "scripts/show_best_perf.py", line 13, in <module>
+    for model_size in os.listdir(os.path.join(src_data_path, "runtime", model_name)):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/runtime/gpt'
+Traceback (most recent call last):
+  File "scripts/show_best_perf.py", line 13, in <module>
+    for model_size in os.listdir(os.path.join(src_data_path, "runtime", model_name)):
+FileNotFoundError: [Errno 2] No such file or directory: '/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/runtime/gpt'
+[LOG][RUNTIME](2026-05-14-12-44-17) start executing cofnig: gpt_350M_mbs8_recomp .
+[LOG][RUNTIME](2026-05-14-12-44-17) end executing config: gpt_350M_mbs8_recomp .
+[LOG][RUNTIME](2026-05-14-12-48-49) start executing cofnig: gpt_1_3B_2stages_2026-5-14-5-55-0 .
+[LOG][RUNTIME](2026-05-14-12-48-49) end executing config: gpt_1_3B_2stages_2026-5-14-5-55-0 .
+[LOG][RUNTIME](2026-05-14-12-51-20) start executing cofnig: gpt_1_3B_3stages_2026-5-14-5-55-0 .
+[LOG][RUNTIME](2026-05-14-12-51-20) end executing config: gpt_1_3B_3stages_2026-5-14-5-55-0 .
+[LOG][RUNTIME](2026-05-14-12-53-51) start executing cofnig: gpt_1_3B_4stages_2026-5-14-5-55-0 .
+[LOG][RUNTIME](2026-05-14-12-53-51) end executing config: gpt_1_3B_4stages_2026-5-14-5-55-0 .
+[LOG][RUNTIME](2026-05-14-12-56-23) start executing cofnig: gpt_2_6B_5stages_2026-5-14-5-58-20 .
+[LOG][RUNTIME](2026-05-14-12-56-23) end executing config: gpt_2_6B_5stages_2026-5-14-5-58-20 .
+[LOG][RUNTIME](2026-05-14-12-58-39) start executing cofnig: gpt_2_6B_6stages_2026-5-14-5-58-20 .
+[LOG][RUNTIME](2026-05-14-12-59-05) start executing cofnig: gpt_13B_14stages_2026-5-14-6-5-1 .
+[LOG][RUNTIME](2026-05-14-12-58-39) end executing config: gpt_2_6B_6stages_2026-5-14-5-58-20 .
+[LOG][RUNTIME](2026-05-14-13-03-00) start executing cofnig: gpt_2_6B_7stages_2026-5-14-5-58-20 .
+[LOG][RUNTIME](2026-05-14-12-59-05) end executing config: gpt_13B_14stages_2026-5-14-6-5-1 .
+[LOG][RUNTIME](2026-05-14-13-07-19) start executing cofnig: gpt_13B_15stages_2026-5-14-6-5-1 .
+[LOG][RUNTIME](2026-05-14-13-03-00) end executing config: gpt_2_6B_7stages_2026-5-14-5-58-20 .
+-------- gpt End-to-end throughput --------
+Size	 Batch Size	 Time(s)	 Thpt(samples/s)
+13B	 1024.0		 74.74		 13.70
+350M	 1024.0		 87.01		 11.77
+1_3B	 1024.0		 44.84		 22.83
+2_6B	 1024.0		 37.37		 27.40
+Config
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/gpt/13B/gpt_13B_14stages_2026-5-14-6-5-1.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/gpt/350M/gpt_350M_mbs8_recomp.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/gpt/1_3B/gpt_1_3B_2stages_2026-5-14-5-55-0.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/gpt/2_6B/gpt_2_6B_5stages_2026-5-14-5-58-20.json
+[LOG][RUNTIME](2026-05-14-13-07-19) end executing config: gpt_13B_15stages_2026-5-14-6-5-1 .
+[LOG][RUNTIME](2026-05-14-13-10-34) start executing cofnig: gpt_13B_16stages_2026-5-14-6-5-1 .
+[LOG][RUNTIME](2026-05-14-13-10-34) end executing config: gpt_13B_16stages_2026-5-14-6-5-1 .
+[LOG][RUNTIME](2026-05-14-13-14-43) start executing cofnig: gpt_6_7B_10stages_2026-5-14-6-1-41 .
+[LOG][RUNTIME](2026-05-14-13-14-43) end executing config: gpt_6_7B_10stages_2026-5-14-6-1-41 .
+[LOG][RUNTIME](2026-05-14-13-17-41) start executing cofnig: gpt_6_7B_16stages_2026-5-14-6-1-41 .
+[LOG][RUNTIME](2026-05-14-13-17-41) end executing config: gpt_6_7B_16stages_2026-5-14-6-1-41 .
+[LOG][RUNTIME](2026-05-14-13-21-14) start executing cofnig: gpt_6_7B_8stages_2026-5-14-6-1-41 .
+[LOG][RUNTIME](2026-05-14-13-21-14) end executing config: gpt_6_7B_8stages_2026-5-14-6-1-41 .
+[LOG][SEARCH](2026-05-16-03-02-38) start searching for scale-layer, 8layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-04-52) start searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-05-58) end searching for scale-layer, 8layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-05-58) start searching for scale-layer, 16layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-08-12) end searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-09-19) end searching for scale-layer, 16layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-09-19) start searching for scale-layer, 32layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-10-08) start searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-12-39) end searching for scale-layer, 32layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-12-39) start searching for scale-layer, 64layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-13-28) end searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-15-59) end searching for scale-layer, 64layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-15-59) start searching for scale-layer, 128layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-19-19) end searching for scale-layer, 128layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-19-19) start searching for scale-layer, 256layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-22-41) end searching for scale-layer, 256layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-22-41) start searching for scale-layer, 512layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-26-06) end searching for scale-layer, 512layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-26-06) start searching for scale-layer, 1024layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-03-30-02) end searching for scale-layer, 1024layers, 1 nodes * 8 GPUs.
+[LOG][SEARCH](2026-05-16-07-17-45) start searching for scale-layer, 8layers, 1 nodes * 8 GPUs.
+[LOG][RUNTIME](2026-05-16-07-18-12) start executing config: scale-layer_8layers_3stages_2026-5-16-3-2-38 .
+[LOG][RUNTIME](2026-05-16-07-18-38) end executing config: scale-layer_8layers_3stages_2026-5-16-3-2-38 .
+[LOG][RUNTIME](2026-05-16-07-18-38) start executing config: scale-layer_16layers_4stages_2026-5-16-3-5-58 .
+[LOG][SEARCH](2026-05-16-07-19-01) start searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][RUNTIME](2026-05-16-07-19-15) end executing config: scale-layer_16layers_4stages_2026-5-16-3-5-58 .
+[LOG][RUNTIME](2026-05-16-07-19-15) start executing config: scale-layer_32layers_4stages_2026-5-16-3-9-19 .
+[LOG][RUNTIME](2026-05-16-07-19-56) end executing config: scale-layer_32layers_4stages_2026-5-16-3-9-19 .
+[LOG][RUNTIME](2026-05-16-07-19-56) start executing config: scale-layer_64layers_4stages_2026-5-16-3-12-39 .
+[LOG][RUNTIME](2026-05-16-07-20-57) end executing config: scale-layer_64layers_4stages_2026-5-16-3-12-39 .
+[LOG][RUNTIME](2026-05-16-07-20-57) start executing config: scale-layer_128layers_5stages_2026-5-16-3-15-59 .
+[LOG][SEARCH](2026-05-16-07-22-21) end searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][RUNTIME](2026-05-16-07-22-33) end executing config: scale-layer_128layers_5stages_2026-5-16-3-15-59 .
+[LOG][RUNTIME](2026-05-16-07-22-33) start executing config: scale-layer_256layers_8stages_2026-5-16-3-19-19 .
+[LOG][SEARCH](2026-05-16-07-23-16) start searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][RUNTIME](2026-05-16-07-25-35) end executing config: scale-layer_256layers_8stages_2026-5-16-3-19-19 .
+[LOG][RUNTIME](2026-05-16-07-25-35) start executing config: scale-layer_512layers_7stages_2026-5-16-3-22-42 .
+[LOG][SEARCH](2026-05-16-07-26-36) end searching for gpt, 2_6B, 1 nodes * 8 GPUs.
+[LOG][RUNTIME](2026-05-16-07-31-21) end executing config: scale-layer_512layers_7stages_2026-5-16-3-22-42 .
+[LOG][RUNTIME](2026-05-16-07-31-21) start executing config: scale-layer_1024layers_8stages_2026-5-16-3-26-6 .
+[LOG][RUNTIME](2026-05-16-07-43-53) end executing config: scale-layer_1024layers_8stages_2026-5-16-3-26-6 .
+-------- scale-layer End-to-end throughput --------
+Size	 Batch Size	 Time(s)	 Thpt(samples/s)
+16layers	 1024.0		 3.41		 300.31
+128layers	 1024.0		 24.47		 41.85
+32layers	 1024.0		 6.16		 166.37
+64layers	 1024.0		 11.90		 86.08
+256layers	 1024.0		 50.98		 20.09
+1024layers	 1024.0		 216.26		 4.74
+8layers	 1024.0		 2.30		 444.43
+512layers	 1024.0		 106.33		 9.63
+Config
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/16layers/scale-layer_16layers_4stages_2026-5-16-3-5-58.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/128layers/scale-layer_128layers_5stages_2026-5-16-3-15-59.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/32layers/scale-layer_32layers_4stages_2026-5-16-3-9-19.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/64layers/scale-layer_64layers_4stages_2026-5-16-3-12-39.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/256layers/scale-layer_256layers_8stages_2026-5-16-3-19-19.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/1024layers/scale-layer_1024layers_8stages_2026-5-16-3-26-6.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/8layers/scale-layer_8layers_3stages_2026-5-16-3-2-38.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/scale-layer/512layers/scale-layer_512layers_7stages_2026-5-16-3-22-42.json
+[LOG][RUNTIME](2026-05-16-07-46-29) start executing config: gpt_2_6B_4stages_2026-5-16-3-4-52 .
+[LOG][RUNTIME](2026-05-16-07-48-26) end executing config: gpt_2_6B_4stages_2026-5-16-3-4-52 .
+[LOG][RUNTIME](2026-05-16-07-48-26) start executing config: gpt_2_6B_5stages_2026-5-16-3-4-52 .
+[LOG][RUNTIME](2026-05-16-07-50-27) end executing config: gpt_2_6B_5stages_2026-5-16-3-4-52 .
+[LOG][RUNTIME](2026-05-16-07-50-27) start executing config: gpt_2_6B_6stages_2026-5-16-3-4-52 .
+[LOG][RUNTIME](2026-05-16-07-52-09) end executing config: gpt_2_6B_6stages_2026-5-16-3-4-52 .
+[LOG][RUNTIME](2026-05-16-07-52-09) start executing config: gpt_2_6B_5stages_2026-5-16-3-10-8 .
+[LOG][RUNTIME](2026-05-16-07-55-16) end executing config: gpt_2_6B_5stages_2026-5-16-3-10-8 .
+[LOG][RUNTIME](2026-05-16-07-55-16) start executing config: gpt_2_6B_6stages_2026-5-16-3-10-8 .
+[LOG][RUNTIME](2026-05-16-07-58-28) end executing config: gpt_2_6B_6stages_2026-5-16-3-10-8 .
+[LOG][RUNTIME](2026-05-16-07-58-28) start executing config: gpt_2_6B_7stages_2026-5-16-3-10-8 .
+[LOG][RUNTIME](2026-05-16-08-01-44) end executing config: gpt_2_6B_7stages_2026-5-16-3-10-8 .
+[LOG][RUNTIME](2026-05-16-08-01-44) start executing config: gpt_2_6B_5stages_2026-5-16-7-19-1 .
+[LOG][RUNTIME](2026-05-16-08-11-06) end executing config: gpt_2_6B_5stages_2026-5-16-7-19-1 .
+[LOG][RUNTIME](2026-05-16-08-11-06) start executing config: gpt_2_6B_6stages_2026-5-16-7-19-1 .
+[LOG][RUNTIME](2026-05-16-08-15-13) end executing config: gpt_2_6B_6stages_2026-5-16-7-19-1 .
+[LOG][RUNTIME](2026-05-16-08-15-13) start executing config: gpt_2_6B_7stages_2026-5-16-7-19-1 .
+[LOG][RUNTIME](2026-05-16-08-19-19) end executing config: gpt_2_6B_7stages_2026-5-16-7-19-1 .
+[LOG][RUNTIME](2026-05-16-08-19-19) start executing config: gpt_2_6B_5stages_2026-5-16-7-23-16 .
+[LOG][RUNTIME](2026-05-16-08-27-11) end executing config: gpt_2_6B_5stages_2026-5-16-7-23-16 .
+[LOG][RUNTIME](2026-05-16-08-27-11) start executing config: gpt_2_6B_6stages_2026-5-16-7-23-16 .
+[LOG][RUNTIME](2026-05-16-08-35-02) end executing config: gpt_2_6B_6stages_2026-5-16-7-23-16 .
+[LOG][RUNTIME](2026-05-16-08-35-02) start executing config: gpt_2_6B_7stages_2026-5-16-7-23-16 .
+[LOG][RUNTIME](2026-05-16-08-42-54) end executing config: gpt_2_6B_7stages_2026-5-16-7-23-16 .
+-------- mbs End-to-end throughput --------
+Size	 Batch Size	 Time(s)	 Thpt(samples/s)
+2048	 2048.0		 73.62		 27.82
+256	 256.0		 19.94		 12.84
+4096	 4096.0		 146.75		 27.91
+512	 512.0		 47.90		 10.69
+Config
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/mbs/2048/gpt_2_6B_7stages_2026-5-16-7-19-1.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/mbs/256/gpt_2_6B_6stages_2026-5-16-3-4-52.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/mbs/4096/gpt_2_6B_6stages_2026-5-16-7-23-16.json
+/home/liminglong.lml/sxz/SuperScaler/logs-large/aceso/configs/mbs/512/gpt_2_6B_6stages_2026-5-16-3-10-8.json

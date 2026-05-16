@@ -1,0 +1,151 @@
+------------------------ arguments ------------------------
+  adaptive_hyper_parameters ....................... 5
+  add_action_finetune_algo ........................ False
+  add_action_finetune_dim ......................... False
+  add_action_tp_dp_exchange ....................... False
+  add_action_tune_tp_dp ........................... False
+  check_recompute_with_group ...................... False
+  config_save_path ................................ /home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/gpt/1_3B/
+  config_suffix ................................... 2026-5-14-6-9-38
+  consider_collective_memory ...................... False
+  consider_reserved_space ......................... True
+  consider_shared_space ........................... True
+  continue_when_fail .............................. True
+  decoder_seq_len ................................. 512
+  end_num_stages .................................. 4
+  finetune_after_trial ............................ 0
+  finetune_tp_dp_after_trial ...................... False
+  flex_recompute .................................. True
+  forbid_turn_back ................................ False
+  global_batch_size ............................... 1024
+  high_memory_rate ................................ 0.9
+  init_dim ........................................ tp
+  initial_point ................................... balance
+  log_path ........................................ /home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/search/gpt/1_3B/
+  max_num_hops .................................... None
+  max_num_trials .................................. 100
+  max_op_move_steps ............................... 5
+  max_tp .......................................... 4
+  memory_limit .................................... 28000
+  memory_main_params .............................. 2
+  memory_optimizer ................................ 4
+  memory_pred_type ................................ MAX
+  micro_batch_size ................................ [1, 2, 4, 8]
+  min_mbs ......................................... 1
+  model_name ...................................... gpt
+  model_size ...................................... 1_3B
+  multi_process ................................... True
+  num_algos ....................................... 2
+  num_gpus ........................................ 4
+  num_gpus_per_node ............................... 4
+  num_layers ...................................... 24
+  num_nodes ....................................... 1
+  num_of_saved_configs ............................ 1
+  num_partners_in_op_mig .......................... 1
+  only_top_1_target ............................... False
+  op_group_size ................................... 1
+  peak_mem_in_backward ............................ 0
+  predict_delta_time .............................. False
+  print_debug_info ................................ True
+  print_gpu_mig_details ........................... False
+  print_move_op_details ........................... False
+  print_recomp_debug_info ......................... False
+  print_recompute_ops ............................. True
+  profiled_time_path .............................. /home/liminglong.lml/sxz/SuperScaler/profiler/profiled-time-eurosys/
+  random_order_actions ............................ False
+  resharding ...................................... True
+  save_to_csv ..................................... None
+  seq_len ......................................... 2048
+  simple_prim_mbs ................................. False
+  simple_prim_mig ................................. False
+  sort_metric ..................................... max_stage_time
+  start_num_stages ................................ 1
+  support_comm_predict ............................ False
+  time_budget_per_trial ........................... 10
+  time_budget_total ............................... 10
+-------------------- end of arguments ---------------------
+working on num_stages[1], tp_size[1], dp_size[4], mbs[4], recomp[True] ...
+working on num_stages[1], tp_size[1], dp_size[4], mbs[4], recomp[False] ...
+working on num_stages[1], tp_size[1], dp_size[4], mbs[8], recomp[True] ...
+working on num_stages[1], tp_size[1], dp_size[4], mbs[8], recomp[False] ...
+working on num_stages[1], tp_size[2], dp_size[2], mbs[2], recomp[True] ...
+working on num_stages[1], tp_size[2], dp_size[2], mbs[2], recomp[False] ...
+working on num_stages[1], tp_size[2], dp_size[2], mbs[4], recomp[True] ...
+working on num_stages[1], tp_size[2], dp_size[2], mbs[4], recomp[False] ...
+working on num_stages[1], tp_size[2], dp_size[2], mbs[8], recomp[True] ...
+working on num_stages[1], tp_size[2], dp_size[2], mbs[8], recomp[False] ...
+working on num_stages[1], tp_size[4], dp_size[1], mbs[1], recomp[True] ...
+working on num_stages[1], tp_size[4], dp_size[1], mbs[1], recomp[False] ...
+working on num_stages[1], tp_size[4], dp_size[1], mbs[2], recomp[True] ...
+working on num_stages[1], tp_size[4], dp_size[1], mbs[2], recomp[False] ...
+working on num_stages[1], tp_size[4], dp_size[1], mbs[4], recomp[True] ...
+working on num_stages[1], tp_size[4], dp_size[1], mbs[4], recomp[False] ...
+working on num_stages[1], tp_size[4], dp_size[1], mbs[8], recomp[True] ...
+working on num_stages[1], tp_size[4], dp_size[1], mbs[8], recomp[False] ...
+working on num_stages[2], tp_size[1], dp_size[2], mbs[2], recomp[True] ...
+working on num_stages[2], tp_size[1], dp_size[2], mbs[2], recomp[False] ...
+working on num_stages[2], tp_size[1], dp_size[2], mbs[4], recomp[True] ...
+working on num_stages[2], tp_size[1], dp_size[2], mbs[4], recomp[False] ...
+working on num_stages[2], tp_size[1], dp_size[2], mbs[8], recomp[True] ...
+working on num_stages[2], tp_size[1], dp_size[2], mbs[8], recomp[False] ...
+working on num_stages[2], tp_size[2], dp_size[1], mbs[1], recomp[True] ...
+working on num_stages[2], tp_size[2], dp_size[1], mbs[1], recomp[False] ...
+working on num_stages[2], tp_size[2], dp_size[1], mbs[2], recomp[True] ...
+working on num_stages[2], tp_size[2], dp_size[1], mbs[2], recomp[False] ...
+working on num_stages[2], tp_size[2], dp_size[1], mbs[4], recomp[True] ...
+working on num_stages[2], tp_size[2], dp_size[1], mbs[4], recomp[False] ...
+working on num_stages[2], tp_size[2], dp_size[1], mbs[8], recomp[True] ...
+working on num_stages[2], tp_size[2], dp_size[1], mbs[8], recomp[False] ...
+working on num_stages[4], tp_size[1], dp_size[1], mbs[1], recomp[True] ...
+working on num_stages[4], tp_size[1], dp_size[1], mbs[1], recomp[False] ...
+working on num_stages[4], tp_size[1], dp_size[1], mbs[2], recomp[True] ...
+working on num_stages[4], tp_size[1], dp_size[1], mbs[2], recomp[False] ...
+working on num_stages[4], tp_size[1], dp_size[1], mbs[4], recomp[True] ...
+working on num_stages[4], tp_size[1], dp_size[1], mbs[4], recomp[False] ...
+working on num_stages[4], tp_size[1], dp_size[1], mbs[8], recomp[True] ...
+working on num_stages[4], tp_size[1], dp_size[1], mbs[8], recomp[False] ...
+case 0|56848.14|26088.08| op = [315]| tp = [1, ] | dp = [4, ] | algo = [0, ] | rc = [313] | gpus = [4] | micro_bs = 4 | time = [56848] | memory = [26088]
+fail case|41390.15|48444.82| op = [315]| tp = [1, ] | dp = [4, ] | algo = [0, ] | rc = [0] | gpus = [4] | micro_bs = 4 | time = [41390] | memory = [48444]
+case 1|54024.37|27784.16| op = [315]| tp = [1, ] | dp = [4, ] | algo = [0, ] | rc = [313] | gpus = [4] | micro_bs = 8 | time = [54024] | memory = [27784]
+fail case|39211.17|72497.59| op = [315]| tp = [1, ] | dp = [4, ] | algo = [0, ] | rc = [0] | gpus = [4] | micro_bs = 8 | time = [39211] | memory = [72497]
+case 2|161893.32|13256.10| op = [315]| tp = [2, ] | dp = [2, ] | algo = [0, ] | rc = [313] | gpus = [4] | micro_bs = 2 | time = [161893] | memory = [13256]
+case 3|112083.29|24940.83| op = [315]| tp = [2, ] | dp = [2, ] | algo = [0, ] | rc = [0] | gpus = [4] | micro_bs = 2 | time = [112083] | memory = [24940]
+case 4|148082.19|14288.19| op = [315]| tp = [2, ] | dp = [2, ] | algo = [0, ] | rc = [313] | gpus = [4] | micro_bs = 4 | time = [148082] | memory = [14288]
+fail case|102510.01|37657.62| op = [315]| tp = [2, ] | dp = [2, ] | algo = [0, ] | rc = [0] | gpus = [4] | micro_bs = 4 | time = [102510] | memory = [37657]
+case 5|142255.09|17536.39| op = [315]| tp = [2, ] | dp = [2, ] | algo = [0, ] | rc = [313] | gpus = [4] | micro_bs = 8 | time = [142255] | memory = [17536]
+fail case|98504.21|64275.24| op = [315]| tp = [2, ] | dp = [2, ] | algo = [0, ] | rc = [0] | gpus = [4] | micro_bs = 8 | time = [98504] | memory = [64275]
+case 6|315409.37|6840.10| op = [315]| tp = [4, ] | dp = [1, ] | algo = [0, ] | rc = [313] | gpus = [4] | micro_bs = 1 | time = [315409] | memory = [6840]
+case 7|215856.10|13188.83| op = [315]| tp = [4, ] | dp = [1, ] | algo = [0, ] | rc = [0] | gpus = [4] | micro_bs = 1 | time = [215856] | memory = [13188]
+case 8|291262.58|7540.19| op = [315]| tp = [4, ] | dp = [1, ] | algo = [0, ] | rc = [313] | gpus = [4] | micro_bs = 2 | time = [291262] | memory = [7540]
+case 9|198907.91|20237.62| op = [315]| tp = [4, ] | dp = [1, ] | algo = [0, ] | rc = [0] | gpus = [4] | micro_bs = 2 | time = [198907] | memory = [20237]
+case 10|277797.33|9520.39| op = [315]| tp = [4, ] | dp = [1, ] | algo = [0, ] | rc = [313] | gpus = [4] | micro_bs = 4 | time = [277797] | memory = [9520]
+fail case|189913.74|34915.24| op = [315]| tp = [4, ] | dp = [1, ] | algo = [0, ] | rc = [0] | gpus = [4] | micro_bs = 4 | time = [189913] | memory = [34915]
+case 11|274834.00|13568.78| op = [315]| tp = [4, ] | dp = [1, ] | algo = [0, ] | rc = [313] | gpus = [4] | micro_bs = 8 | time = [274833] | memory = [13568]
+fail case|187776.92|64358.53| op = [315]| tp = [4, ] | dp = [1, ] | algo = [0, ] | rc = [0] | gpus = [4] | micro_bs = 8 | time = [187776] | memory = [64358]
+case 12|59084.03|13700.07| op = [157, 158]| tp = [1, 1, ] | dp = [2, 2, ] | algo = [0, 0, ] | rc = [156, 157] | gpus = [2, 2] | micro_bs = 2 | time = [55034, 59084] | memory = [13536, 13700]
+fail case|43584.38|35880.78| op = [157, 158]| tp = [1, 1, ] | dp = [2, 2, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [2, 2] | micro_bs = 2 | time = [39557, 43584] | memory = [35880, 24392]
+case 13|56316.70|16456.14| op = [157, 158]| tp = [1, 1, ] | dp = [2, 2, ] | algo = [0, 0, ] | rc = [156, 157] | gpus = [2, 2] | micro_bs = 4 | time = [52266, 56316] | memory = [16032, 16456]
+fail case|41435.49|60721.52| op = [157, 158]| tp = [1, 1, ] | dp = [2, 2, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [2, 2] | micro_bs = 4 | time = [37405, 41435] | memory = [60721, 37840]
+case 14|55640.80|22096.29| op = [157, 158]| tp = [1, 1, ] | dp = [2, 2, ] | algo = [0, 0, ] | rc = [156, 157] | gpus = [2, 2] | micro_bs = 8 | time = [51597, 55640] | memory = [21184, 22096]
+fail case|40894.88|110563.04| op = [157, 158]| tp = [1, 1, ] | dp = [2, 2, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [2, 2] | micro_bs = 8 | time = [36870, 40894] | memory = [110563, 64865]
+case 15|164348.64|6988.08| op = [157, 158]| tp = [2, 2, ] | dp = [1, 1, ] | algo = [0, 0, ] | rc = [156, 157] | gpus = [2, 2] | micro_bs = 1 | time = [160153, 164348] | memory = [6988, 6952]
+case 16|114467.20|18660.82| op = [157, 158]| tp = [2, 2, ] | dp = [1, 1, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [2, 2] | micro_bs = 1 | time = [110317, 114467] | memory = [18660, 12540]
+case 17|150521.95|8440.14| op = [157, 158]| tp = [2, 2, ] | dp = [1, 1, ] | algo = [0, 0, ] | rc = [156, 157] | gpus = [2, 2] | micro_bs = 2 | time = [146445, 150521] | memory = [8416, 8440]
+fail case|104840.69|31761.59| op = [157, 158]| tp = [2, 2, ] | dp = [1, 1, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [2, 2] | micro_bs = 2 | time = [100804, 104840] | memory = [31761, 19616]
+case 18|144867.02|11472.29| op = [157, 158]| tp = [2, 2, ] | dp = [1, 1, ] | algo = [0, 0, ] | rc = [156, 157] | gpus = [2, 2] | micro_bs = 4 | time = [140899, 144867] | memory = [11360, 11472]
+fail case|100926.93|58051.18| op = [157, 158]| tp = [2, 2, ] | dp = [1, 1, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [2, 2] | micro_bs = 4 | time = [96996, 100926] | memory = [58051, 33825]
+case 19|142142.80|17536.58| op = [157, 158]| tp = [2, 2, ] | dp = [1, 1, ] | algo = [0, 0, ] | rc = [156, 157] | gpus = [2, 2] | micro_bs = 8 | time = [138211, 142142] | memory = [17248, 17536]
+fail case|98957.17|110630.41| op = [157, 158]| tp = [2, 2, ] | dp = [1, 1, ] | algo = [0, 0, ] | rc = [0, 0] | gpus = [2, 2] | micro_bs = 8 | time = [95060, 98957] | memory = [110630, 62243]
+case 20|63828.34|8948.07| op = [79, 78, 78, 80]| tp = [1, 1, 1, 1, ] | dp = [1, 1, 1, 1, ] | algo = [0, 0, 0, 0, ] | rc = [78, 78, 78, 79] | gpus = [1, 1, 1, 1] | micro_bs = 1 | time = [55720, 54855, 54855, 63828] | memory = [8872, 7112, 7032, 8948]
+fail case|48290.65|31216.80| op = [79, 78, 78, 80]| tp = [1, 1, 1, 1, ] | dp = [1, 1, 1, 1, ] | algo = [0, 0, 0, 0, ] | rc = [0, 0, 0, 0] | gpus = [1, 1, 1, 1] | micro_bs = 1 | time = [40228, 39363, 39363, 48290] | memory = [31216, 23624, 17712, 13808]
+case 21|60890.76|11704.14| op = [79, 78, 78, 80]| tp = [1, 1, 1, 1, ] | dp = [1, 1, 1, 1, ] | algo = [0, 0, 0, 0, ] | rc = [78, 78, 78, 79] | gpus = [1, 1, 1, 1] | micro_bs = 2 | time = [52774, 52187, 52187, 60890] | memory = [11472, 9616, 9456, 11704]
+fail case|45960.28|56161.55| op = [79, 78, 78, 80]| tp = [1, 1, 1, 1, ] | dp = [1, 1, 1, 1, ] | algo = [0, 0, 0, 0, ] | rc = [0, 0, 0, 0] | gpus = [1, 1, 1, 1] | micro_bs = 2 | time = [37884, 37297, 37297, 45960] | memory = [56161, 42641, 30816, 21424]
+case 22|60194.78|17200.29| op = [79, 78, 78, 80]| tp = [1, 1, 1, 1, ] | dp = [1, 1, 1, 1, ] | algo = [0, 0, 0, 0, ] | rc = [78, 78, 78, 79] | gpus = [1, 1, 1, 1] | micro_bs = 4 | time = [52077, 51664, 51664, 60194] | memory = [16672, 14624, 14304, 17200]
+fail case|45373.23|106051.10| op = [79, 78, 78, 80]| tp = [1, 1, 1, 1, ] | dp = [1, 1, 1, 1, ] | algo = [0, 0, 0, 0, ] | rc = [0, 0, 0, 0] | gpus = [1, 1, 1, 1] | micro_bs = 4 | time = [37292, 36880, 36880, 45373] | memory = [106051, 80674, 57025, 36640]
+fail case|60314.38|28192.58| op = [79, 78, 78, 80]| tp = [1, 1, 1, 1, ] | dp = [1, 1, 1, 1, ] | algo = [0, 0, 0, 0, ] | rc = [78, 78, 78, 79] | gpus = [1, 1, 1, 1] | micro_bs = 8 | time = [52389, 52066, 52066, 60314] | memory = [27072, 24640, 24000, 28192]
+fail case|45279.46|205830.25| op = [79, 78, 78, 80]| tp = [1, 1, 1, 1, ] | dp = [1, 1, 1, 1, ] | algo = [0, 0, 0, 0, ] | rc = [0, 0, 0, 0] | gpus = [1, 1, 1, 1] | micro_bs = 8 | time = [37389, 37065, 37065, 45279] | memory = [205830, 156740, 109443, 67073]
+
+
+best_0|54024.37|27784.16| op = [315]| tp = [1, ] | dp = [4, ] | algo = [0, ] | rc = [313] | gpus = [4] | micro_bs = 8 | time = [54024] | memory = [27784]
+config has been saved to /home/liminglong.lml/sxz/SuperScaler/logs-large/megatron/configs/gpt/1_3B/gpt_1_3B_24layers_megatron_est_54024.json
+[TOTAL TIME] 0.10296463966369629 s.

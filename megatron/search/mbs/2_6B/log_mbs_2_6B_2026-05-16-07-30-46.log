@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "gen_megatron_plan.py", line 8, in <module>
+    from aceso_cost_model import read_profiled_time, predict_time_breakdown
+  File "/home/liminglong.lml/sxz/SuperScaler/search/aceso_cost_model.py", line 10, in <module>
+    args = parse_args()
+  File "/home/liminglong.lml/sxz/SuperScaler/search/aceso_utils.py", line 482, in parse_args
+    raise RuntimeError(f"model {args.model_name} is not supported yet.")
+RuntimeError: model mbs is not supported yet.
